@@ -1,0 +1,193 @@
+@font-face{
+    font-family: TekoLight;
+    src: url('fonts/Teko/Teko-Light.ttf');
+}
+@font-face{
+    font-family: TekoBold;
+    src: url('fonts/Teko/Teko-Bold.ttf');
+}
+@font-face{
+    font-family: RobotoCondensedRegular;
+    src: url('fonts/Roboto/RobotoCondensed-Regular.ttf');
+}
+body{
+    position: relative;
+    width: 100%;
+    background-color: darkslategray !important;
+    overflow-x: hidden;
+}
+h1,h2,h3,h4{
+    font-family: TekoBold;
+}
+.nav-item-font{
+    font-family: RobotoCondensedRegular;
+}
+span,p{
+    font-family: RobotoCondensedRegular;
+}
+.NavBar-Upper{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(2,100,64, 1);
+}
+.nav-left-column{
+    position: relative;
+    width: 40%;
+    padding-left: 10% !important;
+    top: -50px;
+}
+.logo-container{
+    position: relative;
+    height: 210px;
+    background-color: rgba(2,100,64,0.4);
+    text-align: center;
+    top: -60px;
+}
+.nav-right-column{
+    position: relative;
+    width: 40%;
+    top: -50px;
+    padding-left: 4% !important;
+}
+.nav-item{
+    position: relative;
+    width: 150px;
+    font-weight: bold;
+    font-size: 12pt;
+    display: inline-block;
+    text-align: center;
+    
+}
+.nav-item:hover{
+    border-bottom: 3px solid green;
+    cursor: pointer;
+}
+.navbar-nav{
+    display: inline-block !important;
+}
+.shadow{
+    -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.navbar{
+    height: 100px;
+}
+.body-title{
+    font-weight: bold;
+    font-size: 72pt;
+    color: floralwhite;
+    margin-top: 10%;
+}
+h1{
+    text-align: center;
+}
+.icon-white{
+    position: relative;
+    color: #FFF;
+    font-size: 18pt;
+}
+.nav-element{
+    position: relative;
+    color: #FFF;
+    font-size: 14pt;
+}
+.nav-element:hover{
+    text-decoration: none !important;
+}
+.Footer{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #FFF;
+}
+.footer-conecta{
+    position: relative;
+    width: 100%;
+    font-size: 10pt;
+    display: inline-block;
+    padding-inline-start: 0px !important;
+}
+.icon-facebook{
+    color: #3b5998; 
+    display: inline-block; 
+    font-size: 14pt;
+    left: 0px;
+}
+.icon-youtube{
+    color: red; 
+    display: inline-block; 
+    margin-left: 10px; 
+    font-size: 14pt;
+}
+.icon-email{
+    color: darkblue;
+    display: inline-block;
+    margin-left: 10px; 
+    font-size: 14pt;
+}
+.conecta-section{
+    text-align: justify;
+}
+.conecta-container{
+    position: relative;
+    width: 25%;
+    margin: auto;
+    margin-top: 5%;
+}
+.footer-contacto{
+    position: relative;
+    width: 40%;
+    margin: auto;
+    margin-top: 5%;
+}
+.contacto-list{
+    position: relative;
+    list-style: none;
+    text-align: justify;
+    padding-inline-start: 0px !important;
+}
+.copy-right-section{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: darkslategrey;
+    text-align: center;
+    color: floralwhite;
+}
+.form-container{
+    position: relative;
+    width: 40%;
+    background-color: floralwhite;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2%;
+    /*padding-right: 20%;*/
+}
+.signup-form{
+    position: relative;
+    width: 40%;
+    background-color: floralwhite;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2%;
+}
+.required{
+    color: red;
+    font-family: RobotoCondensedRegular;
+    border-color: red !important;
+}
+.good{
+    border-color: #00A86B !important; 
+}
+.hidden{
+    visibility: hidden;
+}
+@media screen and (min-width:768px) and (max-width:1024){
+    .nav-item{
+        font-size: 10pt !important; 
+    } 
+}
