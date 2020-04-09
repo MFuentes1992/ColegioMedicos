@@ -36,40 +36,40 @@
     </div>
     <div class="container-fluid">
         <div class="signup-form">
-            <form class="form-submit">
+            <form class="form-submit" action="register.php" method="post">
                 <div class="form-group">
                     <label for="FirstName">Nombre:</label>
-                    <input type="text" id="FirstName" class="form-control">
+                    <input type="text" id="FirstName" name="FirstName" class="form-control">
                     <small id="FirstNameValidation" class="required hidden">Por favor ingresa un Nombre.</small>
                 </div>
                 <div class="form-group">
                     <label for="LastName">Apellido:</label>
-                    <input type="text" id="LastName" class="form-control">
+                    <input type="text" id="LastName" name="LastName" class="form-control">
                     <small id="LastNameValidation" class="required hidden">Por favor ingresa un Apellido.</small>
                 </div>
                 <div class="form-group">
                     <label for="Email">Correo electrónico:</label>
-                    <input type="email" id="Email" class="form-control">
+                    <input type="email" id="Email" name="Email" class="form-control">
                     <small id="EmailValidation" class="required hidden">Por favor ingresa tu correo electrónico.</small>
                 </div>
                 <div class="form-group">
                     <label for="Password">Contraseña:</label>
-                    <input type="password" id="Password" class="form-control">
+                    <input type="password" id="Password" name="Password" class="form-control">
                     <small id="PasswordValidation" class="required hidden">Por favor ingresa tu contraseña.</small>
                 </div>
                 <div class="form-group">
                     <label for="Cedula">Cédula:</label>
-                    <input type="text" id="Cedula" class="form-control">
+                    <input type="text" id="Cedula" name="Cedula" class="form-control">
                     <small id="CedulaValidation" class="required hidden">Por favor ingresa tu cédula.</small>
                 </div>
                 <div class="form-group">
                     <label for="Titulo">Título:</label>
-                    <input type="text" id="Titulo" class="form-control">
+                    <input type="text" id="Titulo" name="Titulo" class="form-control">
                     <small id="TituloValidation" class="required hidden">Por favor ingresa tu título.</small>
                 </div>
                 <div class="form-group">
                     <label for="BirthDate">Fecha de nacimiento:</label>
-                    <input type="Date" id="BirthDate" class="form-control">
+                    <input type="Date" id="BirthDate" name="BirthDate" class="form-control">
                     <small class="">Fecha de nacimiento Mes/Día/Año.</small>
                     <br>
                     <small id="BirthValidation" class="required hidden">Por favor ingresa tu fecha de nacimiento.</small>
@@ -116,7 +116,7 @@
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script>
     $('.signup-form').submit(function(event){
-        event.preventDefault();
+        
         var flag = true;
         var _FirstName = $('#FirstName').val();
         if(_FirstName == ''){
@@ -163,7 +163,7 @@
             flag = true;
         }
         var _Cedula = $('#Cedula').val();
-        if(_Cedula == ''){
+        /*if(_Cedula == ''){
             $('#Cedula').addClass('required')
             $('#CedulaValidation').removeClass('hidden');
             flag = false;
@@ -172,7 +172,7 @@
             $('#Cedula').addClass('good');
             $('#CedulaValidation').addClass('hidden'); 
             flag = true;
-        }
+        }*/
         var _Titulo = $('#Titulo').val();
         if(_Titulo == ''){
             $('#Titulo').addClass('required')
@@ -195,8 +195,10 @@
             $('#BirthValidation').addClass('hidden'); 
             flag = true;
         }  
-        if(flag){
-            const _data = {
+
+        if(!flag){
+            event.preventDefault();
+           /* const _data = {
                 FirstName : _FirstName,
                 LastName : _LastName,
                 Email : _Email,
@@ -206,18 +208,20 @@
                 BirthDate : _BirthDate
             }
             /*//// CLEAR VALUES ////*/
-            $.ajax({
+            /*$.ajax({
                 url:'register.php',
                 data: _data,
                 method: 'POST'
             }).done(function(msg){
                 console.log(msg)
-            });
-        }
+            });*/
+            
+        }        
         $('html').animate({
             scrollTop:0            
         }, 500, function(){
-        });          
+        });
+        return flag;          
     });
 </script>
 </html>

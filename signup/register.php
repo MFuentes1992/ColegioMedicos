@@ -34,6 +34,14 @@
         GetSQLValueString($conexion, $now, "date"),
         "'avatar'");
         $result = mysqli_query($conexion, $strQuery) or die(mysqli_error($conexion));
-        echo $result;
+        if($result){
+            session_start();
+            $strQueryUser = sprintf("SELECT * FROM usuarios WHERE email_usuario = %s AND password_usuario = %s",
+            GetSQLValueString($conexion, $Email, "text"),
+            GetSQLValueString($conexion, $Password, "text"));
+            $raw = mysqli_query($conexion, $strQueryUser) or die(mysqli_error($conexion));
+            $_SESSION["usuario"] = mysqli_fetch_assoc($raw);
+            header("Location:http://localhost/ColegioMedicos/dashboard/");
+        }
     }
 ?>

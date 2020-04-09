@@ -186,8 +186,137 @@ h1{
 .hidden{
     visibility: hidden;
 }
-@media screen and (min-width:768px) and (max-width:1024){
+
+.vertical-menu{
+    position: fixed;
+    background-color: #323B46;
+    width: 20%;
+    top: 0;    
+    position: fixed;
+    left: 0;
+    height: 100%;
+    color: ghostwhite;
+}
+
+.dashboard{
+    background-color: darkslategray !important;
+
+}
+.dashboard-panel{
+    position: fixed;
+    background-color: #E7E8EC;
+    margin-left: 20%;
+    width: 80%;
+    height: 100%;
+}
+.dashboard-title{
+    padding-left: 10%;
+    padding-top: 5%;
+}
+.dashboard-title > h1{
+    text-align: justify !important;
+}
+.panel-video{
+    position: relative;
+    width: 60%;    
+    margin: auto;
+    margin-top: 10%;
+}
+.card-video{
+    position: relative;
+    width: fit-content;
+    padding: 15px;
+    margin: auto;
+    background-color: #FFF;
+    text-align: center;
+}
+.menu-item{
+    height: 50px;
+    text-align: justify;
+}
+
+.menu-element{
+    padding-left: 10% !important;
+}
+/*/////////////////////WIDE LAPTOPS//////////*/
+@media screen and (min-width: 1300px) and (max-width:1600px){
+    .nav-left-column{
+        position: relative;
+        width: 30%;
+        padding-left: 5% !important;
+        top: -50px;
+    }
+    .nav-right-column{
+        position: relative;
+        width: 30%;
+        top: -50px;
+        padding-left: 0% !important;
+    }
+
+    .nav-item{
+        position: relative;
+        width: 100px;
+        font-weight: bold;
+        font-size: 12pt;
+        display: inline-block;
+        text-align: center;
+        
+    }
+}
+/*//////////////////SMALL LAPTOPS//////////*/
+@media screen and (min-width:1025px) and (max-width:1300px){
+    .nav-left-column{
+        position: relative;
+        width: 40%;
+        padding-left: 0% !important;
+        top: -50px;
+    }
+
+    .nav-right-column{
+        position: relative;
+        width: 40%;
+        top: -50px;
+        padding-left: 0% !important;
+    }
+
+    .nav-item{
+        position: relative;
+        width: 150px;
+        font-weight: bold;
+        font-size: 12pt;
+        display: inline-block;
+        text-align: center;
+        
+    }
+}
+
+/*//////////////////TABLETS///////////////*/
+@media screen and (min-width:768px) and (max-width:1024px){
     .nav-item{
         font-size: 10pt !important; 
     } 
+
+    .nav-left-column{
+        position: relative;
+        width: 30%;
+        padding-left: 1% !important;
+        top: -50px;
+    }
+
+    .nav-right-column{
+        position: relative;
+        width: 30%;
+        top: -50px;
+        padding-left: 0% !important;
+    }
+
+    .nav-item{
+        position: relative;
+        width: 90px;
+        font-weight: bold;
+        font-size: 12pt;
+        display: inline-block;
+        text-align: center;
+        
+    }
 }
