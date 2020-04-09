@@ -238,6 +238,14 @@ h1{
 .menu-element{
     padding-left: 10% !important;
 }
+.dash-item{
+    color: #FFF !important;
+    text-decoration: none !important;
+}
+.dash-item:hover{
+    color: #FFF !important;
+    text-decoration: none !important;
+}
 /*/////////////////////WIDE LAPTOPS//////////*/
 @media screen and (min-width: 1300px) and (max-width:1600px){
     .nav-left-column{
