@@ -32,7 +32,7 @@
         0,
         GetSQLValueString($conexion, $now, "date"),
         GetSQLValueString($conexion, $now, "date"),
-        "'avatar'");
+        "'default'");
         $result = mysqli_query($conexion, $strQuery) or die(mysqli_error($conexion));
         if($result){
             session_start();

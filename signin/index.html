@@ -39,14 +39,16 @@
     <div class="container-fluid">
         <div class="form-container">
             <h1>Inicia sesión</h1>
-            <form action="">
+            <form action="signin.php" method="POST" class="signin-form">
                 <div class="form-group">
                     <label for="UserEmail">Ingresa tu correo electrónico:</label>
-                    <input type="email" class="form-control" id="UserEmail" aria-describedby="User Email">
+                    <input type="email" name="Email" class="form-control" id="UserEmail" aria-describedby="User Email">
+                    <small class="required hidden" id="requiredEmail">Por favor ingresa tu correo electrónico.</small>
                 </div>
                 <div class="form-group">
                     <label for="UserPassword">Ingresa tu contraseña:</label>
-                    <input type="password" class="form-control" id="UserPassword">
+                    <input type="password" name="Password" class="form-control" id="UserPassword">
+                    <small class="required hidden" id="requiredPassword">Por favor ingresa tu contraseña.</small>
                 </div>                
                 <button type="submit" class="btn btn-primary">Ingresar</button>
                 <span>&nbsp;&nbsp;&nbsp;¿No estas registrado? Registrate </span>
@@ -91,4 +93,37 @@
         </p>
     </div>
 </footer>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+    $('.signin-form').submit(function(event){
+        var flag = true;
+        var Email = $('#UserEmail').val();
+        if(Email == ''){
+            $('#UserEmail').addClass('required');
+            $('#requiredEmail').removeClass('hidden');
+            flag = false;
+        } else {
+            $('#UserEmail').removeClass('required');
+            $('#UserEmail').addClass('good');
+            $('#requiredEmail').addClass('hidden');
+            flag = true;
+        }
+        var Password = $('#UserPassword').val();
+        if(Email == ''){
+            $('#UserPassword').addClass('required');
+            $('#requiredPassword').removeClass('hidden');
+            flag = false;
+        } else {
+            $('#UserPassword').removeClass('required');
+            $('#UserPassword').addClass('good');
+            $('#requiredPassword').addClass('hidden');
+            flag = true;
+        }
+        $('html').animate({
+            scrollTop:0            
+        }, 500, function(){
+        });
+        return flag;    
+    });
+</script>
 </html>
