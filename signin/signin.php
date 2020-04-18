@@ -8,14 +8,21 @@
     if(isset($_POST["Email"])){
         $Email = $_POST["Email"];
         $Password = $_POST["Password"];
-        $strQuery = sprintf("SELECT * FROM usuarios WHERE email_usuario = %s AND password_usuario = %s",
-        GetSQLValueString($conexion, $Email, "text"),
-        GetSQLValueString($conexion, $Password, "text"));
+        $strQuery = sprintf("SELECT * FROM usuarios WHERE email_usuario = %s",
+        GetSQLValueString($conexion, $Email, "text"));
         $raw = mysqli_query($conexion, $strQuery) or die(mysqli_error($conexion));
         $result = mysqli_fetch_assoc($raw);
-        session_start();
-        $_SESSION["usuario"] = $result;
-        header("Location:http://localhost/ColegioMedicos/dashboard/");
+
+        $_PWD = GetSQLValueString($conexion, $_POST["Password"], "text");
+        $_verify = password_verify( $_PWD, mysqli_fetch_assoc($raw)["password_usuario"] );
+
+        if( $_verify ){
+            session_start();
+            $_SESSION["usuario"] = $result;
+            header("Location:http://localhost/ColegioMedicos/dashboard/");
+        }else{
+            header("Location:http://localhost/ColegioMedicos/signin/");
+        }
     } else {
         header("Location:http://localhost/ColegioMedicos/signin/");
     }

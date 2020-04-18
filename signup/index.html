@@ -58,6 +58,11 @@
                     <small id="PasswordValidation" class="required hidden">Por favor ingresa tu contraseña.</small>
                 </div>
                 <div class="form-group">
+                    <label for="Email">Teléfono:</label>
+                    <input type="telephone" id="Telefono" name="Telefono" class="form-control">
+                    <small id="TelefonoValidation" class="required hidden">Por favor ingresa tu teléfono.</small>
+                </div>
+                <div class="form-group">
                     <label for="Cedula">Cédula:</label>
                     <input type="text" id="Cedula" name="Cedula" class="form-control">
                     <small id="CedulaValidation" class="required hidden">Por favor ingresa tu cédula.</small>
@@ -171,6 +176,17 @@
             $('#Cedula').removeClass('required');
             $('#Cedula').addClass('good');
             $('#CedulaValidation').addClass('hidden'); 
+            flag = true;
+        }*/
+        var telefono = $('#Telefono').val();
+        /*if(telefono == ''){
+            $('#Telefono').addClass('required')
+            $('#TelefonoValidation').removeClass('hidden');
+            flag = false;
+        } else {
+            $('#Telefono').removeClass('required');
+            $('#Telefono').addClass('good');
+            $('#TelefonoValidation').addClass('hidden'); 
             flag = true;
         }*/
         var _Titulo = $('#Titulo').val();
