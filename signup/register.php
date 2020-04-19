@@ -46,10 +46,13 @@
             echo $_verify;
             if( $_verify ){
                 $_SESSION["usuario"] = mysqli_fetch_assoc($raw);
-                $id = mysqli_fetch_assoc($raw)["id_usuario"];
+                $id = $_SESSION["usuario"]["id_usuario"];
+                $myfile = fopen("../audit.txt", "w") or die("Unable to open file!");
+                fwrite($myfile, "New user\n");
+                fwrite($myfile, "Nombre:".$_SESSION["usuario"]["nombre_usuario"]."|email:".$_SESSION["usuario"]["email_usuario"]);
                 //////////////////////// SEND CONFIRMATION MAIL //////////////////////////
                 // Varios destinatarios
-                    $para = GetSQLValueString($conexion, $Email, "text");
+                    $para = $_SESSION["usuario"]["email_usuario"];
                 // título
                     $título = 'Nuevo Email';
                 // mensaje
@@ -129,14 +132,16 @@
 
                     // Enviarlo
                     $success = mail($para, $título, $mensaje, $cabeceras);
+
+                    //
                     if ($success) {        
-                        echo json_encode(array('success' => 1));
+                        fwrite($myfile, "|Email Sent:1\n");
                     }else{
                         $errorMessage = error_get_last()['message'];
-                        echo json_encode(array('success' => 0, 'message' => $errorMessage));
+                        fwrite($myfile, "|Email Sent:0\n");
                     }
-
-                header("Location:".$url."dashboard/");
+                    fclose($myfile);  
+                    header("Location:".$url."dashboard/");
             }else{
                 echo "Algo Salio mal..";
             }
