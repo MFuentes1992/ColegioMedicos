@@ -1,13 +1,13 @@
 @font-face{
-    font-family: TekoLight;
+    font-family: 'TekoLight';
     src: url('fonts/Teko/Teko-Light.ttf');
 }
 @font-face{
-    font-family: TekoBold;
+    font-family: 'TekoBold';
     src: url('fonts/Teko/Teko-Bold.ttf');
 }
 @font-face{
-    font-family: RobotoCondensedRegular;
+    font-family: 'RobotoCondensedRegular';
     src: url('fonts/Roboto/RobotoCondensed-Regular.ttf');
 }
 body{
@@ -17,13 +17,13 @@ body{
     overflow-x: hidden;
 }
 h1,h2,h3,h4{
-    font-family: TekoBold;
+    font-family: 'TekoBold';
 }
 .nav-item-font{
-    font-family: RobotoCondensedRegular;
+    font-family: 'RobotoCondensedRegular';
 }
 span,p{
-    font-family: RobotoCondensedRegular;
+    font-family: 'RobotoCondensedRegular';
 }
 .NavBar-Upper{
     position: relative;
@@ -101,6 +101,13 @@ h1{
     width: 100%;
     height: 400px;
     background-color: #FFF;
+}
+.footer-elem{
+    text-decoration: none;
+    font-size: 12pt;
+}
+.footer-elem:hover{
+    text-decoration: none;
 }
 .footer-conecta{
     position: relative;
@@ -238,6 +245,12 @@ h1{
 .menu-element{
     padding-left: 10% !important;
 }
+.navbar-nav > a {
+    color: #000;
+}
+.navbar-nav > a:hover {
+    color: #000;
+}
 .dash-item{
     color: #FFF !important;
     text-decoration: none !important;
@@ -245,6 +258,17 @@ h1{
 .dash-item:hover{
     color: #FFF !important;
     text-decoration: none !important;
+}
+
+.black{
+    color: #000 !important;
+}
+.white{
+    color: #FFF;
+}
+.left-margin{
+    margin-left: 2%;
+    vertical-align: middle;
 }
 /*/////////////////////WIDE LAPTOPS//////////*/
 @media screen and (min-width: 1300px) and (max-width:1600px){
