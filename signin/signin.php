@@ -14,16 +14,16 @@
         $result = mysqli_fetch_assoc($raw);
 
         $_PWD = GetSQLValueString($conexion, $_POST["Password"], "text");
-        $_verify = password_verify( $_PWD, mysqli_fetch_assoc($raw)["password_usuario"] );
+        $_verify = password_verify( $_PWD, $result["password_usuario"] );
 
         if( $_verify ){
             session_start();
             $_SESSION["usuario"] = $result;
-            header("Location:http://localhost/ColegioMedicos/dashboard/");
+            header("Location:".$url."dashboard/");
         }else{
-            header("Location:http://localhost/ColegioMedicos/signin/");
+            echo "Algo salio mal";
         }
     } else {
-        header("Location:http://localhost/ColegioMedicos/signin/");
+        header("Location:".$url."signin/");
     }
 ?>

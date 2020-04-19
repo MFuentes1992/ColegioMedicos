@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            width: 100%;
+            background-color: #212529;            
+            text-align: center;
+            color: #FFF;
+            vertical-align: middle;
+        }
+        .body{
+            position: relative;
+            width: 70%;
+            margin: auto;
+            border: 1px solid black;
+            padding: 5%;
+        }
+        table{
+            width: 100%;
+        }
+        th, td{
+            text-align: justify;
+        }
+        h1{
+            text-align: center;
+        }
+        #logoImg{
+            width: 100px;
+            height: 100px;            
+            border-radius: 50%;
+            border: 2px solid #FFF;
+        }
+        button{
+            background-color: #212529;
+            color: #FFF;
+            width: 200px;
+            height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Colegio de Médicos Morelos</h1>
+        <img src="img/logo.jpg" alt="" id="logoImg">
+    </div>
+    <div class="body">
+        <form action="confirm_email.php" method="POST">
+            <h3>¡ Gracias por registrarte !</h3>
+            <p>
+                clic en el enlace de abajo para confirmar tu email.
+            </p>
+            <input type="hidden" name="id_usuario">
+            <button>Confirmar Email</button>
+        </form>
+    </div>
+</body>
+</html>

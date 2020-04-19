@@ -1,7 +1,7 @@
 <?php
   include("DAO.php");
-  $url = "http://localhost/cirkuits/";
- 
+  $url = "http://localhost/ColegioMedicos/";
+  //$url = "http://colegiomedicosmorelos.org/"; 
   function write_console($strMsg)
   {
     echo '<script>console.log("'.$strMsg.'")</script>';

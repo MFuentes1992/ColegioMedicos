@@ -7,7 +7,7 @@
     header("Pragma: no-cache");
     session_start();
     if(!isset($_SESSION["usuario"]["email_usuario"])){
-        header("Location:http://localhost/ColegioMedicos/signin/");
+        header("Location:".$url."signin/");
     }
 ?>
 <!DOCTYPE html>
