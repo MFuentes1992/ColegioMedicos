@@ -46,15 +46,16 @@
             echo $_verify;
             if( $_verify ){
                 $_SESSION["usuario"] = mysqli_fetch_assoc($raw);
-                $id = $_SESSION["usuario"]["id_usuario"];
-                $myfile = fopen("../audit.txt", "w") or die("Unable to open file!");
+                $email = $Email;
+                $myfile = fopen("../audit.txt", "w+") or die("Unable to open file!");
                 fwrite($myfile, "New user\n");
-                fwrite($myfile, "Nombre:".$_SESSION["usuario"]["nombre_usuario"]."|email:".$_SESSION["usuario"]["email_usuario"]);
+                $userName = "Nombre:".$FirstName."|";
+                fwrite($myfile, $userName);
                 //////////////////////// SEND CONFIRMATION MAIL //////////////////////////
                 // Varios destinatarios
-                    $para = $_SESSION["usuario"]["email_usuario"];
+                    $para = $Email;
                 // título
-                    $título = 'Nuevo Email';
+                    $título = 'Confirmar Email';
                 // mensaje
                     $mensaje = '
                     <!DOCTYPE html>
@@ -106,7 +107,7 @@
                     <body>
                         <div class="header">
                             <h1>Colegio de Médicos Morelos</h1>
-                            <img src="img/logo.jpg" alt="" id="logoImg">
+                            <img src="http://colegiomedicosmorelos.org/img/logo.jpg" alt="" id="logoImg">
                         </div>
                         <div class="body">
                             <form action="'.$url.'signup/confirm_email.php" method="POST">
@@ -114,7 +115,7 @@
                                 <p>
                                     clic en el enlace de abajo para confirmar tu email.
                                 </p>
-                                <input type="hidden" name="id_usuario" value="'.$id.'">
+                                <input type="hidden" name="email_usuario" value="'.$email.'">
                                 <button>Confirmar Email</button>
                             </form>
                         </div>
@@ -132,13 +133,13 @@
 
                     // Enviarlo
                     $success = mail($para, $título, $mensaje, $cabeceras);
-
+                    fwrite($myfile, $para);     
                     //
                     if ($success) {        
-                        fwrite($myfile, "|Email Sent:1\n");
+                        fwrite($myfile, "|Confirmation email Sent:1\n");
                     }else{
                         $errorMessage = error_get_last()['message'];
-                        fwrite($myfile, "|Email Sent:0\n");
+                        fwrite($myfile, "|Confirmation email Sent:0\n");
                     }
                     fclose($myfile);  
                     header("Location:".$url."dashboard/");
