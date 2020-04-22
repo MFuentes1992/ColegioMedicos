@@ -10,7 +10,10 @@
 </head>
 <body>
     <div class="NavBar-Upper">
-        <div style="float: right; margin-right: 2%; margin-top: 5px;">
+        <div style="float: left; margin-left: 2%; margin-top: 10px; width:20%">
+            <span class="white left-margin">Tel. 734 128 87 30</span>
+        </div>  
+        <div style="float: right; margin-right: 2%; margin-top: 5px;">          
             <a href="../"  class="nav-element">
                 <span class="icon-white"><i class="fas fa-home"></i></span>
             </a>
@@ -21,7 +24,7 @@
     </div>
     <div class="navbar navbar-light bg-light shadow">
         <ul class="navbar-nav nav-left-column">
-            <li class="nav-item active nav-item-font">Inicio</li>
+            <a href="../"><li class="nav-item active nav-item-font">Inicio</li></a>
             <li class="nav-item active nav-item-font">Mesa Directiva</li>
             <li class="nav-item active nav-item-font">Galeria</li>
         </ul>
@@ -36,9 +39,92 @@
             <li class="nav-item active nav-item-font">Contacto</li>
         </ul>
     </div>
+    <div class="navbar-responsive">
+        <div class="toggle-button-container">
+            <div class="toggle-button" onclick="showMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="responsive-logo-container">
+            <a href="../">
+                <img src="../img/logo.jpg" alt="" width="128">
+            </a>
+        </div>
+    </div>
+    <div class="vertical-menu-responsive">
+        <div class="close-responsive-menu">
+            <div class="cross-btn" onclick="hideMenu()">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="dashboard-title">
+            <h1>Colegio Médicos</h1>
+        </div>
+        <div class="row menu-item">
+            <div class="user-img">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="../" class="dash-item">
+                    <i class="fas fa-home"></i>&nbsp;&nbsp;Inicio</span>
+                </a>
+            </div>
+        </div>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="../signin/" class="dash-item">
+                    <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Iniciar sesión</span>
+                </a>
+            </div>
+        </div>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="../signup/" class="dash-item">                    
+                    <span class="dash-item"><i class="fas fa-user-plus"></i>&nbsp;&nbsp;Registrarse</span>
+                </a>
+            </div>
+        </div>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="exit.php" class="dash-item">                    
+                    <span class="dash-item"><i class="fas fa-users"></i>&nbsp;&nbsp;Mesa Directiva</span>                    
+                </a>
+            </div>
+        </div>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="exit.php" class="dash-item">                    
+                    <span class="dash-item"><i class="fas fa-photo-video"></i>&nbsp;&nbsp;Galería</span>                    
+                </a>
+            </div>
+        </div>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="exit.php" class="dash-item">                    
+                    <span class="dash-item"><i class="far fa-calendar-plus"></i>&nbsp;&nbsp;Eventos</span>                    
+                </a>
+            </div>
+        </div>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="exit.php" class="dash-item">                    
+                    <span class="dash-item"><i class="far fa-newspaper"></i>&nbsp;&nbsp;Noticias</span>                    
+                </a>
+            </div>
+        </div>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="exit.php" class="dash-item">                    
+                    <span class="dash-item"><i class="fas fa-file-signature"></i>&nbsp;&nbsp;Contacto</span>                    
+                </a>
+            </div>
+        </div>
+    </div>        
     <div class="container-fluid">
         <div class="form-container">
-            <h1>Inicia sesión</h1>
+            <h1>Iniciar sesión</h1>
             <form action="signin.php" method="POST" class="signin-form">
                 <div class="form-group">
                     <label for="UserEmail">Ingresa tu correo electrónico:</label>
@@ -62,24 +148,38 @@
 <footer>
     <div class="Footer">
         <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="footer-contacto">
                     <h4>Contacto</h4>
                     <ul class="contacto-list">
                         <li><span>Cel. 734 128 87 30</span></li>
-                        <li><span>Email. colegiomedicos@mail.com</span></li>
-                        <li><span>Calle S/N Col. Centro, Cuernavaca, Morelos.</span></li>
+                        <li><span>Email. colemedicosmorelos@gmail.com</span></li>
+                        <li><span>Calle Pablo Sidar #3 Planta Baja, Colonia Centro Zacatepec Morelos</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                <div class="footer-contacto">
+                    <h4>Directorio</h4>
+                    <ul class="contacto-list">
+                        <li><span>Presidencia</span></li>
+                        <li><span>Mesa directiva</span></li>                        
+                        <li><span>Eventos en el Estado</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="conecta-container">
                     <h4 class="conecta-section">Conecta</h4>
                     <ul class="footer-conecta">
-                        <li class="icon-facebook"><i class="fab fa-facebook-f"></i></li>
-                        <li class="icon-youtube"><i class="fab fa-youtube"></i></li>
-                        <li class="icon-email"><i class="fas fa-envelope"></i></li>
+                        <li class="icon-facebook"><a href="https://www.facebook.com" target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="icon-youtube"><a href="https://www.youtube.com" target="_blank" class="icon-youtube"><i class="fab fa-youtube"></i></a></li>
+                        <li class="icon-email"><a href="mailto:colemedicosmorelos@gmail.com" class="icon-email"><i class="fas fa-envelope"></i></a></li>
+                        <li class="icon-insta"><a href="https://www.instagram.com" target="_blank" class="icon-insta"><i class="fab fa-instagram"></i></a></li>
                     </ul>
+                    <div>
+                        <a href="" class="footer-elem black">Aviso de privacidad</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,5 +225,29 @@
         });
         return flag;    
     });
+    const hideMenu = () =>{
+        $('.vertical-menu-responsive').animate({
+            width: "0px",
+        },
+        {
+            duration: 300,
+            easing: "linear",
+            complete: function(){
+                $('.vertical-menu-responsive').css('visibility', 'hidden');
+            }
+        });
+    }
+    const showMenu = () =>{
+        $('.vertical-menu-responsive').css('visibility', 'visible');
+        $('.vertical-menu-responsive').animate({
+            width: "100%",
+        },
+        {
+            duration: 300,
+            easing: "linear",
+            complete: function(){                
+            }
+        });
+    }
 </script>
 </html>

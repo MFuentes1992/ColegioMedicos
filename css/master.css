@@ -25,6 +25,15 @@ h1,h2,h3,h4{
 span,p{
     font-family: 'RobotoCondensedRegular';
 }
+.navbar-responsive{
+    visibility: hidden;
+    height: 0px;
+}
+.vertical-menu-responsive{    
+    visibility: hidden;
+    height: 0px;
+    z-index: -1;
+}
 .NavBar-Upper{
     position: relative;
     width: 100%;
@@ -134,18 +143,24 @@ h1{
     margin-left: 10px; 
     font-size: 14pt;
 }
+.icon-insta{
+    color: red; 
+    display: inline-block; 
+    margin-left: 10px; 
+    font-size: 14pt;
+}
 .conecta-section{
     text-align: justify;
 }
 .conecta-container{
     position: relative;
-    width: 25%;
+    width: 40%;
     margin: auto;
     margin-top: 5%;
 }
 .footer-contacto{
     position: relative;
-    width: 40%;
+    width: 60%;
     margin: auto;
     margin-top: 5%;
 }
@@ -323,7 +338,7 @@ h1{
 }
 
 /*//////////////////TABLETS///////////////*/
-@media screen and (min-width:768px) and (max-width:1024px){
+@media screen and (min-width:768px) and (max-width:1023px){
     .nav-item{
         font-size: 10pt !important; 
     } 
@@ -344,11 +359,166 @@ h1{
 
     .nav-item{
         position: relative;
-        width: 90px;
+        width: fit-content;
         font-weight: bold;
         font-size: 12pt;
+        margin-right: 18px;
         display: inline-block;
         text-align: center;
         
+    }
+    .Footer{
+        position: relative;
+        height: 100%;
+    }
+    .footer-contacto{
+        position: relative;
+        width: 100%;
+        margin-left: 2%;
+    }
+    .conecta-container{
+        position: relative;
+        width: 100%;
+        margin-left: 2%;
+        margin-bottom: 3%;
+    }
+    .signup-form{
+        position: relative;
+        width: 90%;
+        background-color: #F2F2F2;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding: 2%;
+    }
+    .form-container{
+        position: relative;
+        width: 90%;
+        background-color: #F2F2F2;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding: 2%;
+    }
+    .logo-container > a > img{
+        width: 145px !important;
+    }
+    .logo-container {
+        position: relative;
+        height: 150px;
+        background-color: rgba(2,100,64,0.9);
+        text-align: center;
+        top: -60px;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:760px){
+    body{
+        overflow-x: hidden !important;
+    }
+    .NavBar-Upper{
+        visibility: hidden;
+        height: 0px;
+    }
+    .navbar{
+        visibility: hidden;
+        height: 0px;
+    }
+    .Footer{
+        position: relative;
+        height: 100%;
+    }
+    .footer-contacto{
+        position: relative;
+        width: 100%;
+        margin-left: 2%;
+    }
+    .conecta-container{
+        position: relative;
+        width: 100%;
+        margin-left: 2%;
+        margin-bottom: 3%;
+    }
+    .signup-form{
+        position: relative;
+        width: 98%;
+        background-color: #F2F2F2;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding: 2%;
+        border-radius: 5px;
+    }
+    .form-container{
+        position: relative;
+        width: 98%;
+        background-color: #F2F2F2;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding: 2%;
+        border-radius: 5px;
+    }
+    .navbar-responsive{
+        position: relative;
+        visibility: visible;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        top: -50px;
+    }
+    .toggle-button-container{
+        position: relative;
+        width: 40%;
+        text-align: left;
+        padding-left: 5%;
+        vertical-align: middle;
+    }
+    .toggle-button{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 24pt;
+        color: #FFF;
+        background-color: none;
+        border: 1px solid #FFF;
+        border-radius: 3px;
+        margin-top: 10%;
+    }
+    .responsive-logo-container{
+        position: relative;
+        width: 60%;
+        text-align: left;
+    }
+    .responsive-logo-container > a > img{
+        border-radius: 25px;
+    }
+    .vertical-menu-responsive{
+        position: fixed;               
+        background-color: #323B46;
+        width: 0px;
+        top: 0;   
+        z-index: 12000; 
+        position: fixed;
+        left: 0;
+        height: 100%;
+        color: ghostwhite;
+    }
+    .close-responsive-menu{
+        position: relative;
+        width: 100%;        
+        text-align: right;
+    }
+    .cross-btn{
+        position: relative;
+        width: 10%;
+        background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,121,18,1) 0%, rgba(31,238,31,1) 0%, rgba(25,99,5,1) 100%);
+        color: #FFF;
+        font-size: 18pt;
+        text-align: center;
+        float: right;
+        margin-right: 5%;
+        border-radius: 5px;
     }
 }
