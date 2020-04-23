@@ -222,7 +222,7 @@ h1{
 }
 
 .dashboard{
-    background-color: darkslategray !important;
+    background-color: #E7E8EC !important;
 
 }
 .dashboard-panel{
@@ -288,7 +288,7 @@ h1{
 }
 .swiper-container {
     width: 95%;
-    height: 600px;
+    height: 100%;
     background-image: url('../img/backgrounds/bannerBGPattern.png');    
 }
 .login{
@@ -327,6 +327,16 @@ h1{
     color: #FFF;
     text-decoration: none;
 }
+.video-footer{
+    position: relative;
+    background-color: #009BFF;
+    font-family: 'RobotoCondensedRegular';
+    font-size: 24pt;
+}
+.dash-responsive-menu{
+    background-color: #E7E8EC;
+    visibility: hidden;
+}
 /*/////////////////////WIDE LAPTOPS//////////*/
 @media screen and (min-width: 1300px) and (max-width:1600px){
     .nav-left-column{
@@ -351,7 +361,11 @@ h1{
         text-align: center;
         
     }
-
+    .swiper-container {
+        width: 95%;
+        height: 600px;
+        background-image: url('../img/backgrounds/bannerBGPattern.png');    
+    }
     .logo-container > a > img{
         width: 145px !important;
     }
@@ -363,6 +377,7 @@ h1{
         top: -60px;
     }
 }
+
 /*//////////////////SMALL LAPTOPS//////////*/
 @media screen and (min-width:1000px) and (max-width:1300px){
     .nav-left-column{
@@ -521,6 +536,54 @@ h1{
         text-align: center;
         top: -60px;
     }
+    .dashboard-panel{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .dash-close-responsive-menu{
+        position: relative;
+        width: 100%;        
+        text-align: right;        
+    }    
+    .vertical-menu{
+        visibility: hidden;
+        width: 0px;
+        z-index: 12000;
+    }
+    .dash-responsive-menu{
+        background-color: #E7E8EC;
+        visibility: visible;
+    }
+    .toggle-button-container{
+        position: relative;
+        width: 40%;
+        text-align: left;
+        padding-left: 5%;
+        vertical-align: middle;
+    }
+    .toggle-button{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 24pt;
+        color: #FFF;
+        background-color: none;
+        border: 1px solid #FFF;
+        border-radius: 3px;
+        margin-top: 10%;
+    }
+    .cross-btn{
+        position: relative;
+        width: 10%;
+        background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,121,18,1) 0%, rgba(31,238,31,1) 0%, rgba(25,99,5,1) 100%);
+        color: #FFF;
+        font-size: 18pt;
+        text-align: center;
+        float: right;
+        margin-right: 5%;
+        border-radius: 5px;
+    }  
 }
 
 @media screen and (min-width:320px) and (max-width:760px){
@@ -631,5 +694,30 @@ h1{
         float: right;
         margin-right: 5%;
         border-radius: 5px;
+    }    
+    .dashboard-panel{
+        width: 100%;
+        margin-left: 0px;
+    }    
+    .dash-close-responsive-menu{
+        position: relative;
+        width: 100%;        
+        text-align: right;        
+    }    
+    .vertical-menu{
+        visibility: hidden;
+        width: 0px;
+        z-index: 12000;
+    }
+    .card-video > a > img{
+        width: 150px;
+    }
+    .video-footer > a{
+        font-size: 14pt;
+        padding: 5px;
+    }
+    .dash-responsive-menu{
+        background-color: #E7E8EC;
+        visibility: visible;
     }
 }

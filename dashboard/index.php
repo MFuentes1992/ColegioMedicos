@@ -22,6 +22,11 @@
 </head>
 <body class="dashboard">
     <div class="vertical-menu">
+        <div class="dash-close-responsive-menu">
+            <div class="cross-btn" onclick="hideMenu()">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
         <div class="dashboard-title">
             <h1>Colegio Médicos</h1>
         </div>
@@ -43,12 +48,51 @@
             </div>
         </div>
     </div>
+    <div class="dash-responsive-menu">
+        <div class="toggle-button-container">
+            <div class="toggle-button" onclick="showMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
     <div class="dashboard-panel">
         <div class="panel-video">
             <div class="card-video">
-            <iframe width="800" height="400" src="https://www.youtube.com/embed/qM8RYN1MAh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a href="">
+                    <img src="../img/backgrounds/zoom.png" alt="Zoom Meeting" width="400">
+                </a>
+                <div class="video-footer">
+                    <a href="" class="white no-hover">Unete a la session de zoom</a>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+    const hideMenu = () =>{        
+        $('.vertical-menu').animate({
+            width: "0px",
+        },
+        {
+            duration: 300,
+            easing: "linear",
+            complete: function(){
+                $('.vertical-menu').css('visibility', 'hidden');
+            }
+        });
+    }
+    const showMenu = () =>{
+        $('.vertical-menu').css('visibility', 'visible');
+        $('.vertical-menu').animate({
+            width: "100%",
+        },
+        {
+            duration: 300,
+            easing: "linear",
+            complete: function(){                
+            }
+        });
+    }
+</script>
 </html>
