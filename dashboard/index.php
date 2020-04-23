@@ -23,7 +23,7 @@
 <body class="dashboard">
     <div class="vertical-menu">
         <div class="dash-close-responsive-menu">
-            <div class="cross-btn" onclick="hideMenu()">
+            <div class="cross-btn-dash" onclick="hideMenu()">
                 <i class="fas fa-times"></i>
             </div>
         </div>
@@ -70,7 +70,8 @@
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
 <script>
-    const hideMenu = () =>{        
+    const hideMenu = () =>{  
+        $('.cross-btn-dash').css('visibility', 'hidden');      
         $('.vertical-menu').animate({
             width: "0px",
         },
@@ -84,6 +85,7 @@
     }
     const showMenu = () =>{
         $('.vertical-menu').css('visibility', 'visible');
+        $('.cross-btn-dash').css('visibility', 'visible');
         $('.vertical-menu').animate({
             width: "100%",
         },
