@@ -82,6 +82,7 @@ span,p{
 }
 .navbar{
     height: 100px;
+    z-index: 50;
 }
 .body-title{
     font-weight: bold;
@@ -285,18 +286,59 @@ h1{
     margin-left: 2%;
     vertical-align: middle;
 }
+.swiper-container {
+    width: 95%;
+    height: 600px;
+    background-image: url('../img/backgrounds/bannerBGPattern.png');    
+}
+.login{
+    position: relative;
+    width: 100%;    
+    text-align: center;
+    padding-top: 5%;    
+}
+.register{
+    position: relative;
+    width: 100%;    
+    text-align: center;    
+    background-color: #FFF;
+    font-family: 'TekoBold';
+    font-size: 24pt;      
+}
+.register > h1, .register > a{
+    background-color: #FFF;
+    color: #2F4F4F;    
+    font-family: 'TekoBold';
+}
+.register > a:hover{
+    color: #2F4F4F;    
+}
+.login > div > h1 {
+    background-color: #FFF;
+    color: #2F4F4F;
+}
+.clic-below{
+    position: relative;
+    color: #FFF;
+    font-size: 3.5em; 
+    font-family: 'TekoBold';   
+}
+.no-hover:hover{
+    color: #FFF;
+    text-decoration: none;
+}
 /*/////////////////////WIDE LAPTOPS//////////*/
 @media screen and (min-width: 1300px) and (max-width:1600px){
     .nav-left-column{
         position: relative;
         width: 30%;
         padding-left: 5% !important;
-        top: -50px;
+        top: -30px;
     }
     .nav-right-column{
         position: relative;
         width: 30%;
-        top: -50px;
+        top: -30px;
         padding-left: 0% !important;
     }
 
@@ -309,36 +351,105 @@ h1{
         text-align: center;
         
     }
+
+    .logo-container > a > img{
+        width: 145px !important;
+    }
+    .logo-container {
+        position: relative;
+        height: 150px;
+        background-color: rgba(2,100,64,0.9);
+        text-align: center;
+        top: -60px;
+    }
 }
 /*//////////////////SMALL LAPTOPS//////////*/
-@media screen and (min-width:1025px) and (max-width:1300px){
+@media screen and (min-width:1000px) and (max-width:1300px){
     .nav-left-column{
         position: relative;
-        width: 40%;
+        width: 30%;
         padding-left: 0% !important;
-        top: -50px;
+        top:-30px;       
+        text-align: right;
     }
 
     .nav-right-column{
         position: relative;
-        width: 40%;
-        top: -50px;
+        width: 30%;
+        top:-30px; 
         padding-left: 0% !important;
     }
 
     .nav-item{
         position: relative;
-        width: 150px;
+        width: fit-content;
         font-weight: bold;
         font-size: 12pt;
+        margin-left: 20px;
         display: inline-block;
-        text-align: center;
+        text-align: justify;
         
+    }
+    .logo-container > a > img{
+        width: 145px !important;
+    }
+    .logo-container {
+        position: relative;
+        height: 150px;
+        background-color: rgba(2,100,64,0.9);
+        text-align: center;
+        top: -60px;
+    }
+    .swiper-container {
+        width: 95%;
+        height: 400px;
+        background-image: url('../img/backgrounds/bannerBGPattern.png');    
+    }
+    .login{
+        position: relative;
+        width: 100%;    
+        text-align: center;
+        padding-top: 2%;    
+    }
+    .login > div > h1 {
+        background-color: #FFF;
+        color: #2F4F4F;
+        font-size: 18pt !important;
+    }
+    .register > h1, .register > a{
+        background-color: #FFF;
+        color: #2F4F4F;    
+        font-family: 'TekoBold';
+        font-size: 18pt !important;
+    }
+    .conecta-container{
+        position: relative;
+        width: 60%;
+        margin: auto;
+        margin-top: 5%;
+    }
+    .signup-form{
+        position: relative;
+        width: 70%;
+        background-color: #F2F2F2;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding: 2%;
+    }
+    .form-container{
+        position: relative;
+        width: 70%;
+        background-color: #F2F2F2;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding: 2%; 
     }
 }
 
 /*//////////////////TABLETS///////////////*/
-@media screen and (min-width:768px) and (max-width:1023px){
+@media screen and (min-width:768px) and (max-width:999px){
     .nav-item{
         font-size: 10pt !important; 
     } 
