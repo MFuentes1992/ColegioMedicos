@@ -144,6 +144,7 @@
                     <label for="Email">Correo electrónico:</label>
                     <input type="email" id="Email" name="Email" class="form-control">
                     <small id="EmailValidation" class="required hidden">Por favor ingresa tu correo electrónico.</small>
+                    <small id="EmailTaken" class="required hidden">El correo electrónico ya se ha registrado.</small>
                 </div>
                 <div class="form-group">
                     <label for="Password">Contraseña:</label>
@@ -256,6 +257,8 @@
         if(_Email == ''){
             $('#Email').addClass('required')
             $('#EmailValidation').removeClass('hidden');
+            $('#EmailValidation').css('display', 'block');
+            $('#EmailTaken').addClass('hidden');
             flag = false;
         } else {
             $('#Email').removeClass('required');
@@ -320,25 +323,7 @@
         }  
 
         if(!flag){
-            event.preventDefault();
-           /* const _data = {
-                FirstName : _FirstName,
-                LastName : _LastName,
-                Email : _Email,
-                Password : _Password,
-                Cedula : _Cedula,
-                Titulo : _Titulo,
-                BirthDate : _BirthDate
-            }
-            /*//// CLEAR VALUES ////*/
-            /*$.ajax({
-                url:'register.php',
-                data: _data,
-                method: 'POST'
-            }).done(function(msg){
-                console.log(msg)
-            });*/
-            
+            event.preventDefault();            
         }        
         $('html').animate({
             scrollTop:0            
@@ -370,5 +355,27 @@
             }
         });
     }
+    $('#Email').blur(function(){
+        const _data = {
+            email_usuario: $('#Email').val()
+        }
+        $.ajax({
+            data: _data,
+            method: 'POST',
+            url: 'http://colegiomedicosmorelos.org/signup/check_email.php'
+        }).done(function (msg) {
+            const obj = JSON.parse(msg);
+                if(obj.taken == 1){
+                    $('#Email').addClass('required')
+                    $('#EmailTaken').removeClass('hidden');
+                    $('#EmailValidation').css('display', 'none');
+                    $('#Email').val('');
+                }else{
+                    $('#Email').removeClass('required');
+                    $('#Email').addClass('good');
+                    $('#EmailTaken').addClass('hidden');
+                }
+            });
+    });
 </script>
 </html>
