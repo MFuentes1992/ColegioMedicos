@@ -1,12 +1,12 @@
 <?php 
+    session_start();
     include_once('../util/DAO.php');
     include_once('../util/utilities.php');
     include_once('../util/funciones.php');
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
-    header("Pragma: no-cache");
-    session_start();
-    if(!isset($_SESSION["usuario"]["email_usuario"])){
+    header("Pragma: no-cache");    
+    if(!isset($_SESSION["usuario"])){
         header("Location:".$url."signin/");
     }
 ?>
@@ -58,11 +58,11 @@
     <div class="dashboard-panel">
         <div class="panel-video">
             <div class="card-video">
-                <a href="">
+                <a href="https://us04web.zoom.us/j/8904002442?pwd=QTRqb3Zvam1MNGRabk9mRnJoY1V5Zz09">
                     <img src="../img/backgrounds/zoom.png" alt="Zoom Meeting" width="400">
                 </a>
                 <div class="video-footer">
-                    <a href="" class="white no-hover">Unete a la session de zoom</a>
+                    <a href="https://us04web.zoom.us/j/8904002442?pwd=QTRqb3Zvam1MNGRabk9mRnJoY1V5Zz09 " class="white no-hover">Unete a la session de zoom</a>
                 </div>
             </div>
         </div>

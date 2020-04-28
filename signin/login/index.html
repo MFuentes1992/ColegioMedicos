@@ -9,8 +9,8 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/master.css">
-    <link rel="stylesheet" href="../css/fontawesome-free-5.13.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../../css/master.css">
+    <link rel="stylesheet" href="../../css/fontawesome-free-5.13.0-web/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
@@ -29,13 +29,13 @@
     </div>
     <div class="navbar navbar-light bg-light shadow">
         <ul class="navbar-nav nav-left-column">
-            <a href="../"><li class="nav-item active nav-item-font">Inicio</li></a>
+            <a href="../../"><li class="nav-item active nav-item-font">Inicio</li></a>
             <li class="nav-item active nav-item-font">Mesa Directiva</li>
             <li class="nav-item active nav-item-font">Galería</li>
         </ul>
         <div class="logo-container">
-            <a href="../">
-                <img src="../img/logo.jpg" width="200" alt="">
+            <a href="../../">
+                <img src="../../img/logo.jpg" width="200" alt="">
             </a>
         </div>
         <ul class="navbar-nav nav-right-column">
@@ -52,7 +52,7 @@
         </div>
         <div class="responsive-logo-container">
             <a href="../">
-                <img src="../img/logo.jpg" alt="" width="128">
+                <img src="../../img/logo.jpg" alt="" width="128">
             </a>
         </div>
     </div>
@@ -72,42 +72,42 @@
         </div>
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
-                <a href="../" class="dash-item">
+                <a href="../../" class="dash-item">
                     <i class="fas fa-home"></i>&nbsp;&nbsp;Inicio</span>
                 </a>
             </div>
         </div>
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
-                <a href="../signin/" class="dash-item">
+                <a href="../" class="dash-item">
                     <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Iniciar sesión</span>
                 </a>
             </div>
         </div>
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
-                <a href="../signup/" class="dash-item">                    
+                <a href="../../signup/" class="dash-item">                    
                     <span class="dash-item"><i class="fas fa-user-plus"></i>&nbsp;&nbsp;Registrarse</span>
                 </a>
             </div>
         </div>
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
-                <a href="exit.php" class="dash-item">                    
+                <a href="" class="dash-item">                    
                     <span class="dash-item"><i class="fas fa-users"></i>&nbsp;&nbsp;Mesa Directiva</span>                    
                 </a>
             </div>
         </div>
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
-                <a href="exit.php" class="dash-item">                    
+                <a href="" class="dash-item">                    
                     <span class="dash-item"><i class="fas fa-photo-video"></i>&nbsp;&nbsp;Galería</span>                    
                 </a>
             </div>
         </div>
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
-                <a href="exit.php" class="dash-item">                    
+                <a href="" class="dash-item">                    
                     <span class="dash-item"><i class="far fa-calendar-plus"></i>&nbsp;&nbsp;Eventos</span>                    
                 </a>
             </div>
@@ -128,9 +128,16 @@
         </div>
     </div>        
     <div class="container-fluid">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 50px;">
+            <h1 style="text-align: center;"><strong>Oops..!. <i class="fas fa-robot"></i></strong></h1>
+            <p  style="text-align: center; font-size: 18pt;">Parece quer hubo un error en el inicio de sesion, por favor, revisa tu email o contraseña.</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         <div class="form-container">
             <h1>Iniciar sesión</h1>
-            <form action="signin.php" method="POST" class="signin-form">
+            <form action="../signin.php" method="POST" class="signin-form">
                 <div class="form-group">
                     <label for="UserEmail">Ingresa tu correo electrónico:</label>
                     <input type="email" name="Email" class="form-control" id="UserEmail" aria-describedby="User Email">
@@ -198,7 +205,7 @@
         </p>
     </div>
 </footer>
-<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../../js/jquery-3.4.1.min.js"></script>
 <script>
     $('.signin-form').submit(function(event){
         var flag = true;

@@ -6,7 +6,8 @@
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");
 
-    if(isset($_POST["FirstName"])){
+    if(isset($_POST["FirstName"]) && isset($_POST["LastName"]) && isset($_POST["Email"]) && isset($_POST["Password"]) && isset( $_POST["Telefono"] ) 
+        && isset( $_POST["Cedula"] ) && isset( $_POST["Titulo"] ) && isset( $_POST["BirthDate"] ) ){
         $FirstName = $_POST["FirstName"];
         $LastName = $_POST["LastName"];
         $Email = $_POST["Email"];
@@ -36,16 +37,17 @@
         "'default'");
         $result = false;
         $result = mysqli_query($conexion, $strQuery) or die(mysqli_error($conexion));
-        if($result){
-            session_start();
+        if($result){            
             $strQueryUser = sprintf("SELECT * FROM usuarios WHERE email_usuario = %s",
             GetSQLValueString($conexion, $Email, "text"));
             $raw = mysqli_query($conexion, $strQueryUser) or die(mysqli_error($conexion));
+            $result = mysqli_fetch_assoc($raw);
             $_PWD = GetSQLValueString($conexion, $_POST["Password"], "text");
-            $_verify = password_verify( $_PWD, mysqli_fetch_assoc($raw)["password_usuario"] );
+            $_verify = password_verify( $_PWD, $result["password_usuario"] );
             echo $_verify;
-            if( $_verify ){
-                $_SESSION["usuario"] = mysqli_fetch_assoc($raw);
+            if( $_verify ){                
+                session_start();
+                $_SESSION["usuario"] = $result;
                 $email = $Email;
                 $myfile = fopen("../audit.txt", "w+") or die("Unable to open file!");
                 fwrite($myfile, "New user\n");
@@ -144,7 +146,7 @@
                     fclose($myfile);  
                     header("Location:".$url."dashboard/");
             }else{
-                echo "Algo Salio mal..";
+                header("Location:".$url."signup/");
             }
 
         }

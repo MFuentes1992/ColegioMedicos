@@ -31,7 +31,7 @@
         <ul class="navbar-nav nav-left-column">
             <a href="../"><li class="nav-item active nav-item-font">Inicio</li></a>
             <li class="nav-item active nav-item-font">Mesa Directiva</li>
-            <li class="nav-item active nav-item-font">Galeria</li>
+            <li class="nav-item active nav-item-font">Galería</li>
         </ul>
         <div class="logo-container">
             <a href="../">
@@ -230,28 +230,36 @@
 <script>
     $('.signup-form').submit(function(event){
         
-        var flag = true;
+        var flag = false;
+        var validaNombre = false;
+        var validaApellido = false;
+        var validaMail = false;
+        var validaPassowrd = false;
+        var validaTelefono = false;
+        var validaCedula = false;
+        var validaTitulo = false;
+        var validaBD = false;
         var _FirstName = $('#FirstName').val();
         if(_FirstName == ''){
             $('#FirstName').addClass('required');
             $('#FirstNameValidation').removeClass('hidden');
-            flag = false;
+            validaNombre = false;
         } else {
             $('#FirstName').removeClass('required');
             $('#FirstName').addClass('good');
             $('#FirstNameValidation').addClass('hidden');
-            flag = true;
+            validaNombre = true;
         }
         var _LastName = $('#LastName').val();
         if(_LastName == ''){
             $('#LastName').addClass('required')
             $('#LastNameValidation').removeClass('hidden');
-            flag = false;
+            validaApellido = false;
         } else {
             $('#LastName').removeClass('required');
             $('#LastName').addClass('good');
             $('#LastNameValidation').addClass('hidden'); 
-            flag = true;
+            validaApellido = true;
         }
         var _Email = $('#Email').val();
         if(_Email == ''){
@@ -259,77 +267,77 @@
             $('#EmailValidation').removeClass('hidden');
             $('#EmailValidation').css('display', 'block');
             $('#EmailTaken').addClass('hidden');
-            flag = false;
+            validaMail = false;
         } else {
             $('#Email').removeClass('required');
             $('#Email').addClass('good');
             $('#EmailValidation').addClass('hidden'); 
-            flag = true;
+            validaMail = true;
         }
         var _Password = $('#Password').val();
         if(_Password == ''){
             $('#Password').addClass('required')
             $('#PasswordValidation').removeClass('hidden');
-            flag = false;
+            validaPassowrd = false;
         } else {
             $('#Password').removeClass('required');
             $('#Password').addClass('good');
             $('#PasswordValidation').addClass('hidden'); 
-            flag = true;
+            validaPassowrd = true;
         }
         var _Cedula = $('#Cedula').val();
         if(_Cedula == ''){
             $('#Cedula').addClass('required')
             $('#CedulaValidation').removeClass('hidden');
-            flag = false;
+            validaCedula = false;
         } else {
             $('#Cedula').removeClass('required');
             $('#Cedula').addClass('good');
             $('#CedulaValidation').addClass('hidden'); 
-            flag = true;
+            validaCedula = true;
         }
         var telefono = $('#Telefono').val();
         if(telefono == ''){
             $('#Telefono').addClass('required')
             $('#TelefonoValidation').removeClass('hidden');
-            flag = false;
+            validaTelefono = false;
         } else {
             $('#Telefono').removeClass('required');
             $('#Telefono').addClass('good');
             $('#TelefonoValidation').addClass('hidden'); 
-            flag = true;
+            validaTelefono = true;
         }
         var _Titulo = $('#Titulo').val();
         if(_Titulo == ''){
             $('#Titulo').addClass('required')
             $('#TituloValidation').removeClass('hidden');
-            flag = false;
+            validaTitulo = false;
         } else {
             $('#Titulo').removeClass('required');
             $('#Titulo').addClass('good');
             $('#TituloValidation').addClass('hidden'); 
-            flag = true;
+            validaTitulo = true;
         }
         var _BirthDate = $('#BirthDate').val();
         if(_BirthDate == ''){
             $('#BirthDate').addClass('required')
             $('#BirthValidation').removeClass('hidden');
-            flag = false;
+            validaBD = false;
         } else {
             $('#BirthDate').removeClass('required');
             $('#BirthDate').addClass('good');
             $('#BirthValidation').addClass('hidden'); 
-            flag = true;
+            validaBD = true;
         }  
 
-        if(!flag){
+        if(!validaNombre || !validaApellido || !validaMail || !validaPassowrd || !validaTelefono || !validaCedula || !validaTitulo || !validaBD ){
             event.preventDefault();            
         }        
         $('html').animate({
             scrollTop:0            
         }, 500, function(){
         });
-        return flag;          
+        return validaNombre && validaApellido && validaMail && validaPassowrd && validaTelefono && validaCedula && validaTitulo && validaBD;          
     });
     const hideMenu = () =>{
         $('.vertical-menu-responsive').animate({

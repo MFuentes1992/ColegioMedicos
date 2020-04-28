@@ -17,11 +17,11 @@
         $_verify = password_verify( $_PWD, $result["password_usuario"] );
 
         if( $_verify ){
-            session_start();
+            session_start();            
             $_SESSION["usuario"] = $result;
             header("Location:".$url."dashboard/");
         }else{
-            echo "Algo salio mal";
+            header("Location:".$url."signin/login/");
         }
     } else {
         header("Location:".$url."signin/");
