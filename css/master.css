@@ -21,6 +21,7 @@ h1,h2,h3,h4{
 }
 .nav-item-font{
     font-family: 'RobotoCondensedRegular';
+    color: #000;
 }
 span,p{
     font-family: 'RobotoCondensedRegular';
@@ -43,20 +44,21 @@ span,p{
 .nav-left-column{
     position: relative;
     width: 40%;
-    padding-left: 10% !important;
-    top: -50px;
+    height: 100%;
+    padding-left: 10% !important;    
 }
 .logo-container{
     position: relative;
+    width: 200px;
     height: 210px;
     background-color: rgba(2,100,64,0.4);
-    text-align: center;
-    top: -60px;
+    text-align: center;    
+    display: inline-block;
 }
 .nav-right-column{
     position: relative;
-    width: 40%;
-    top: -50px;
+    width: 40%; 
+    height: 100%;   
     padding-left: 4% !important;
 }
 .nav-item{
@@ -345,13 +347,11 @@ h1{
     .nav-left-column{
         position: relative;
         width: 30%;
-        padding-left: 5% !important;
-        top: -30px;
+        padding-left: 5% !important;        
     }
     .nav-right-column{
         position: relative;
-        width: 30%;
-        top: -30px;
+        width: 30%;        
         padding-left: 0% !important;
     }
 
@@ -386,15 +386,13 @@ h1{
     .nav-left-column{
         position: relative;
         width: 30%;
-        padding-left: 0% !important;
-        top:-30px;       
+        padding-left: 0% !important;              
         text-align: right;
     }
 
     .nav-right-column{
         position: relative;
-        width: 30%;
-        top:-30px; 
+        width: 30%;        
         padding-left: 0% !important;
     }
 
@@ -481,15 +479,13 @@ h1{
     .nav-left-column{
         position: relative;
         width: 30%;
-        padding-left: 1% !important;
-        top: -50px;
+        padding-left: 1% !important;        
     }
 
     .nav-right-column{
         position: relative;
-        width: 30%;
-        top: -50px;
-        padding-left: 0% !important;
+        width: 30%;        
+        padding-left: 3% !important;
     }
 
     .nav-item{
