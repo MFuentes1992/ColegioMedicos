@@ -19,6 +19,9 @@ body{
 h1,h2,h3,h4{
     font-family: 'TekoBold';
 }
+ul{
+    padding-inline-start: 0px !important;
+}
 .nav-item-font{
     font-family: 'RobotoCondensedRegular';
     color: #000;
@@ -40,6 +43,17 @@ span,p{
     width: 100%;
     height: 50px;
     background-color: rgba(2,100,64, 1);
+    text-align: center;
+}
+
+.NavBar-Upper > div > h4{
+    padding-top: 15px;
+}
+.NavBar-Upper > div > a > span{
+    padding-top: 15px;
+}
+.col-align-center{
+    text-align: center;
 }
 .nav-left-column{
     position: relative;
@@ -51,8 +65,9 @@ span,p{
     position: relative;
     width: 200px;
     height: 210px;
-    background-color: rgba(2,100,64,0.4);
-    text-align: center;    
+    text-align: center; 
+    margin: auto;   
+    z-index: 1200;
     display: inline-block;
 }
 .nav-right-column{
@@ -342,6 +357,10 @@ h1{
 .cross-btn-dash{
     visibility: hidden;
 }
+
+.row{
+    margin-left: 0px !important;
+}
 /*/////////////////////WIDE LAPTOPS//////////*/
 @media screen and (min-width: 1300px) and (max-width:1600px){
     .nav-left-column{
@@ -357,13 +376,18 @@ h1{
 
     .nav-item{
         position: relative;
-        width: 100px;
+        width: 150px;
         font-weight: bold;
         font-size: 12pt;
         display: inline-block;
         text-align: center;
         
     }
+
+    .padding-right{
+        padding-right: 10% !important;
+    }
+
     .swiper-container {
         width: 95%;
         height: 600px;
@@ -375,9 +399,8 @@ h1{
     .logo-container {
         position: relative;
         height: 150px;
-        background-color: rgba(2,100,64,0.9);
-        text-align: center;
-        top: -60px;
+        background-color: #FFF;
+        text-align: center;        
     }
 }
 
@@ -398,23 +421,28 @@ h1{
 
     .nav-item{
         position: relative;
-        width: fit-content;
+        width: 100px;
         font-weight: bold;
-        font-size: 12pt;
-        margin-left: 20px;
-        display: inline-block;
-        text-align: justify;
-        
+        font-size: 12pt;        
+        text-align: text;
     }
-    .logo-container > a > img{
-        width: 145px !important;
+    
+    .padding-right{
+        padding-right: 10% !important;
+    }
+
+   .logo-container > img{
+        width: 150px !important;
+        text-align: center;
+        height: 150px !important;
     }
     .logo-container {
         position: relative;
         height: 150px;
-        background-color: rgba(2,100,64,0.9);
-        text-align: center;
-        top: -60px;
+        padding-left: 0px !important;
+        padding-right: 0px !important;        
+        text-align: center; 
+        background-color: #FFF;       
     }
     .swiper-container {
         width: 95%;
@@ -472,10 +500,6 @@ h1{
 
 /*//////////////////TABLETS///////////////*/
 @media screen and (min-width:768px) and (max-width:999px){
-    .nav-item{
-        font-size: 10pt !important; 
-    } 
-
     .nav-left-column{
         position: relative;
         width: 30%;
@@ -490,13 +514,11 @@ h1{
 
     .nav-item{
         position: relative;
-        width: fit-content;
+        width: 70px;
         font-weight: bold;
-        font-size: 12pt;
-        margin-right: 18px;
-        display: inline-block;
+        font-size: 8pt;
         text-align: center;
-        
+
     }
     .Footer{
         position: relative;
@@ -537,9 +559,8 @@ h1{
     .logo-container {
         position: relative;
         height: 150px;
-        background-color: rgba(2,100,64,0.9);
+        background-color: #FFF;
         text-align: center;
-        top: -60px;
     }
     .dashboard-panel{
         width: 100%;
