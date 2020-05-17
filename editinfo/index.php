@@ -290,7 +290,8 @@
         $.ajax({
             data: _data,
             method: 'POST',
-            url: 'http://localhost/ColegioMedicos/editinfo/check_email.php'
+            //url: 'http://localhost/ColegioMedicos/editinfo/check_email.php'
+            url: 'http://colegiomedicosmorelos.org/editinfo/check_email.php'
         }).done(function(msg){            
             const obj = JSON.parse(msg);
             if(obj.taken === 0){
