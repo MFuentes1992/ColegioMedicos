@@ -36,7 +36,15 @@
         GetSQLValueString($conexion, $now, "date"),
         "'default'");
         $result = false;
-        $result = mysqli_query($conexion, $strQuery) or die(mysqli_error($conexion));
+
+        // Search if the user is not already registered
+        $strSearchForUser = sprintf("SELECT * FROM usuarios WHERE email_usuario = %s", GetSQLValueString($conexion, $Email, "text"));
+        $rawDuplicate = mysqli_query($conexion, $strSearchForUser) or die(mysqli_error($conexion));
+        $duplicateResult = mysqli_fetch_assoc($rawDuplicate);
+
+        //If the user is already registered, then will not make the insert
+        $result = $duplicateResult == null ? mysqli_query($conexion, $strQuery) or die(mysqli_error($conexion)) : false;
+        
         if($result){            
             $strQueryUser = sprintf("SELECT * FROM usuarios WHERE email_usuario = %s",
             GetSQLValueString($conexion, $Email, "text"));
@@ -149,6 +157,6 @@
                 header("Location:".$url."signup/");
             }
 
-        }
+        } echo "Usuario ya registrado";
     }
 ?>
