@@ -8,6 +8,9 @@
     header("Pragma: no-cache");    
     if(!isset($_SESSION["usuario"])){
         header("Location:".$url."signin/");
+    }else{
+        $strQuery = sprintf("SELECT * FROM usuarios");
+        $strResult = mysqli_query($conexion, $strQuery)or die(mysqli_error($conexion));        
     }
 ?>
 <!DOCTYPE html>
@@ -18,6 +21,10 @@
     <title>Colegio de Médicos del Estado de Morelos A.C.</title>
     <link rel="stylesheet" href="../css/master.css">    
     <link rel="stylesheet" href="../css/fontawesome-free-5.13.0-web/css/all.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="../css/mdb.min.css">
+    <!-- MDBootstrap Datatables  -->
+    <link href="../css/addons/datatables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body class="dashboard">
@@ -37,7 +44,7 @@
         </div>
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
-                <a href="./" class="dash-item">
+                <a href="../dashboard/" class="dash-item">
                     <span><i class="fas fa-columns"></i>&nbsp;&nbsp;Dashboard</span>
                 </a>
             </div>
@@ -74,19 +81,63 @@
         </div>
     </div>
     <div class="dashboard-panel">
-        <div class="panel-video">
-            <div class="card-video">
-                <a href="https://us04web.zoom.us/j/8904002442?pwd=QTRqb3Zvam1MNGRabk9mRnJoY1V5Zz09">
-                    <img src="../img/backgrounds/zoom.png" alt="Zoom Meeting" width="400">
-                </a>
-                <div class="video-footer">
-                    <a href="https://us04web.zoom.us/j/8904002442?pwd=QTRqb3Zvam1MNGRabk9mRnJoY1V5Zz09 " class="white no-hover">Unete a la session de zoom</a>
-                </div>
+        <div class="panel-analytics">
+            <div class="card-analytics">
+                <h2>
+                    Analytics
+                </h2>
+                <table class="analytics-table table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Telefono</th>
+                            <th>Celular</th>
+                            <th>Cedula</th>
+                            <th>Titulo</th>
+                            <th>Fecha nacimiento</th>
+                            <th>Estatus</th>
+                            <th>isAdmin</th>
+                            <th>Fecha registro</th>
+                            <th>Fecha ult. actualizacion</th>
+                            <th>Avatar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while($row = mysqli_fetch_assoc($strResult)){
+                            echo '<tr>';
+                            echo '<td>'.$row["id_usuario"].'</td>';
+                            echo '<td>'.$row["nombre_usuario"].'</td>';
+                            echo '<td>'.$row["apellido_usuario"].'</td>';
+                            echo '<td>'.$row["email_usuario"].'</td>';
+                            echo '<td>'.$row["password_usuario"].'</td>';
+                            echo '<td>'.$row["tel_usuario"].'</td>';
+                            echo '<td>'.$row["cel_usuario"].'</td>';
+                            echo '<td>'.$row["cedula_usuario"].'</td>';
+                            echo '<td>'.$row["titulo_usuario"].'</td>';
+                            echo '<td>'.$row["nacimiento_usuario"].'</td>';
+                            echo '<td>'.$row["estatus_usuario"].'</td>';
+                            echo '<td>'.$row["isAdmin"].'</td>';
+                            echo '<td>'.$row["fecha_registro"].'</td>';
+                            echo '<td>'.$row["fecha_actualizacion"].'</td>';
+                            echo '<td>'.$row["avatar_usuario"].'</td>';
+                            echo '</tr>';
+                        }?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </body>
-<script src="../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="../js/addons/datatables.min.js"></script>
 <script>
     const hideMenu = () =>{  
         $('.cross-btn-dash').css('visibility', 'hidden');      
@@ -114,5 +165,10 @@
             }
         });
     }
+
+    $(document).ready(function () {
+        $('.analytics-table').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
 </script>
 </html>

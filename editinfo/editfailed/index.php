@@ -44,6 +44,22 @@
         </div>
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="../editinfo/" class="dash-item">
+                    <span><i class="fas fa-edit"></i>&nbsp;&nbsp;Editar informacion</span>
+                </a>
+            </div>
+        </div>
+        <?php if($_SESSION["usuario"]["isAdmin"] == 1){ ?>
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
+                <a href="../analytics/" class="dash-item">
+                <i class="fas fa-chart-bar"></i>&nbsp;&nbsp;Analytics</span>
+                </a>
+            </div>
+        </div>  
+        <?php }?>  
+        <div class="row menu-item">
+            <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
                 <a href="../dashboard/exit.php" class="dash-item">
                     <span class="dash-item"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Salir</span>
                 </a>
