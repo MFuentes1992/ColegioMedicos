@@ -67,7 +67,7 @@
         <?php }?>      
         <div class="row menu-item">
             <div class="col-lg-12 col-md-12 col-sm-12 menu-element">
-                <a href="exit.php" class="dash-item">
+                <a href="../dashboard/exit.php" class="dash-item">
                     <span class="dash-item"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Salir</span>
                 </a>
             </div>
@@ -92,18 +92,13 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
-                            <th>Email</th>
-                            <th>Password</th>
+                            <th>Email</th>                            
                             <th>Telefono</th>
                             <th>Celular</th>
                             <th>Cedula</th>
                             <th>Titulo</th>
                             <th>Fecha nacimiento</th>
-                            <th>Estatus</th>
-                            <th>isAdmin</th>
-                            <th>Fecha registro</th>
-                            <th>Fecha ult. actualizacion</th>
-                            <th>Avatar</th>
+                            <th>Estatus</th>                            
                         </tr>
                     </thead>
                     <tbody>
@@ -112,18 +107,13 @@
                             echo '<td>'.$row["id_usuario"].'</td>';
                             echo '<td>'.$row["nombre_usuario"].'</td>';
                             echo '<td>'.$row["apellido_usuario"].'</td>';
-                            echo '<td>'.$row["email_usuario"].'</td>';
-                            echo '<td>'.$row["password_usuario"].'</td>';
+                            echo '<td>'.$row["email_usuario"].'</td>';                            
                             echo '<td>'.$row["tel_usuario"].'</td>';
                             echo '<td>'.$row["cel_usuario"].'</td>';
                             echo '<td>'.$row["cedula_usuario"].'</td>';
                             echo '<td>'.$row["titulo_usuario"].'</td>';
                             echo '<td>'.$row["nacimiento_usuario"].'</td>';
                             echo '<td>'.$row["estatus_usuario"].'</td>';
-                            echo '<td>'.$row["isAdmin"].'</td>';
-                            echo '<td>'.$row["fecha_registro"].'</td>';
-                            echo '<td>'.$row["fecha_actualizacion"].'</td>';
-                            echo '<td>'.$row["avatar_usuario"].'</td>';
                             echo '</tr>';
                         }?>
                     </tbody>
